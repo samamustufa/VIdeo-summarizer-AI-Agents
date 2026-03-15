@@ -14,7 +14,7 @@ import tempfile
 from dotenv import load_dotenv
 load_dotenv()
 
-API_KEY = os.getenv("GOOGLE_API_KEY")
+API_KEY = "sbvdjbvdojbvoujbvowubvibioubashvi"
 if API_KEY:
     genai.configure(api_key=API_KEY)
 
@@ -33,7 +33,7 @@ st.header("Powered by Gemini 2.0 Flash Exp")
 def initialize_agent():
     return Agent(
         name="Video AI Summarizer",
-        model=Gemini(id="gemini-2.0-flash-exp"),
+        model=Gemini(id="gemini-3.5-flash"),
         tools=[DuckDuckGo()],
         markdown=True
     )
