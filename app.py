@@ -72,15 +72,23 @@ if video_file:
                         processed_video = get_file(processed_video.name)
 
                     # Prompt generation for analysis
-                    analysis_prompt = (
-                        f"""
-                        Analyze the uploaded video for content and context.
-                        Respond to the following query using video insights and supplementary web research:
+                    analysis_prompt = f"""
+                        You are an expert video analyst.
+
+                        Analyze the uploaded video carefully and answer the user's question.
+
+                        User question:
                         {user_query}
 
-                        Provide a detailed, user-friendly, and actionable response.
+                        Your response should include:
+                        1. Key events in the video
+                        2. Important insights
+                        3. Contextual explanation
+                        4. If relevant, additional information from web search
+                        5. Clear bullet points
+
+                        Make the explanation easy to understand.
                         """
-                    )
 
                     # AI agent processing
                     response = multimodal_Agent.run(analysis_prompt, videos=[processed_video])
