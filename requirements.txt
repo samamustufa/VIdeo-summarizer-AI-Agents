@@ -15,3 +15,4 @@ streamlit
 phidata
 google-generativeai
 duckduckgo-search
+#this is the req file for this 
